@@ -9,8 +9,10 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
-        //https://www.youtube.com/watch?v=P8wc4lFngXk
-        //https://www.youtube.com/watch?v=zK82egxHrLc
+        //MainPage = new AppShell(); //LoginPage
+        MainPage = new NavigationPage(new Login2Page()); //Login2Page
     }
 }
+
+//https://www.youtube.com/watch?v=P8wc4lFngXk
+//https://www.youtube.com/watch?v=zK82egxHrLc

@@ -16,7 +16,9 @@ namespace Honow_Warehouse.Service
                 var userInfo= new UserInfo();
                 if (username == "00813" && password == "00813+-*/")
                 {
+                    userInfo.UserId = 1;
                     userInfo.UserName = username;
+                    userInfo.Password = password;
                     return await Task.FromResult(userInfo);
                 }
                 else
