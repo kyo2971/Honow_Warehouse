@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Honow_Warehouse.Models;
 using Honow_Warehouse.Service;
+using Honow_Warehouse.UserControl;
 using Honow_Warehouse.Views;
 using Newtonsoft.Json;
 
@@ -31,7 +32,9 @@ namespace Honow_Warehouse.ViewModels
                 Preferences.Set(nameof(App.UserInfo), userDetails);
                 App.UserInfo = userInfo;
 
-                await Shell.Current.GoToAsync($".//{nameof(HomePage)}");
+                AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
+
+                await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
             }
         }
     }

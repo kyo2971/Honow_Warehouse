@@ -1,4 +1,5 @@
-﻿using Honow_Warehouse.Views;
+﻿using Honow_Warehouse.ViewModels;
+using Honow_Warehouse.Views;
 
 namespace Honow_Warehouse;
 
@@ -7,5 +8,7 @@ public partial class AppShell : Shell
 	public AppShell()
 	{
 		InitializeComponent();
+		this.BindingContext = new AppShellViewModel();
+		Routing.RegisterRoute(nameof(HomePage),typeof(HomePage));
     }
 }

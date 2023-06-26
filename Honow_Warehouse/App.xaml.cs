@@ -9,8 +9,8 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-        //MainPage = new AppShell(); //LoginPage
-        MainPage = new NavigationPage(new Login2Page()); //Login2Page
+        MainPage = new AppShell(); //LoginPage
+        //MainPage = new NavigationPage(new Login2Page()); //Login2Page
     }
 }
 

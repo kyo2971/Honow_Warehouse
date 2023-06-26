@@ -5,17 +5,25 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Honow_Warehouse"
     xmlns:views="clr-namespace:Honow_Warehouse.Views"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:models="clr-namespace:Honow_Warehouse.Models"
+    Shell.TabBarIsVisible="False">
 
     <ShellContent
-        Title="Home"
+        Title="Logout"
         ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="MainPage" />
-
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Route="LoginPage" />
+    
     <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Home"/>
-        <ShellContent Title="Contact"/>
-        <ShellContent Title="About"/>
+        <ShellContent Title="Home" Icon="{x:Static models:Icons.Dasboard}" ContentTemplate="{DataTemplate views:HomePage}"/>
+        <ShellContent Title="Contact" Icon="{x:Static models:Icons.ContactUs}" ContentTemplate="{DataTemplate views:ContactPage}"/>
+        <ShellContent Title="About" Icon="{x:Static models:Icons.AboutUs}" ContentTemplate="{DataTemplate views:AboutPage}"/>
     </FlyoutItem>
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="#1D8348"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
 
 </Shell>
